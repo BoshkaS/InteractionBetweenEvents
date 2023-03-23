@@ -57,7 +57,7 @@ namespace InteractionBetweenEvents
                     flower.FlowerOpen += bee.Visiting;
                     if ((int)girl.Day >= 5)
                     {
-                        flower.FlowerClose += girl.Snuffing;
+                        flower.FlowerOpen += girl.Snuffing;
                     }
                 }
                 OnSunrise(TimeOfDay);
@@ -70,7 +70,7 @@ namespace InteractionBetweenEvents
                     flower.FlowerOpen += fly.Visiting;
                     if ((int)girl.Day < 5)
                     {
-                        flower.FlowerClose += girl.Snuffing;
+                        flower.FlowerOpen += girl.Snuffing;
                     }
                 }
                 OnSunset(TimeOfDay);
