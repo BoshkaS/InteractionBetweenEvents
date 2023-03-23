@@ -17,7 +17,7 @@ namespace InteractionBetweenEvents
             Bee bee = new Bee("Працівник");
             NightFly fly = new NightFly("Летун");
 
-            Girl girl = new Girl("Олена", 12, Days.Неділя);
+            Girl girl = new Girl("Олена", 12, Days.Вівторок);
             
 
             sun.OnSun("День", bee, fly, girl, flower_1, flower_2, flower_3);

@@ -35,15 +35,30 @@ namespace InteractionBetweenEvents
         //Метод ініціації події Sniff
         private void OnSnuffing(Flower flower)
         {
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("{0} сфотографувалась з квіткою {1}", Name, flower.Name);
+            if (flower.DissolveTime == "День" && (int)Day >= 5)
+            {
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("{0} сфотографувалась з квіткою {1}", Name, flower.Name);
                 if (Sniff != null)
                 {
                     PropertyChangedEventArgs arg = new PropertyChangedEventArgs(flower.DissolveTime);
                     Sniff(this, arg);
                 }
+            }
+            else if (flower.DissolveTime == "Ніч" && (int)Day < 5)
+            {
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("{0} сфотографувалась з квіткою {1}", Name, flower.Name);
+                if (Sniff != null)
+                {
+                    PropertyChangedEventArgs arg = new PropertyChangedEventArgs(flower.DissolveTime);
+                    Sniff(this, arg);
+                }
+            }
         }
+        
         public string Name { get; set;}
 
         public uint Age { get; set;}
